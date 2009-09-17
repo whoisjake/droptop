@@ -1,0 +1,36 @@
+<style>
+   	html, body, div, iframe { margin:0; padding:0; height:100%; }
+	iframe { display:block; width:100%; border:none; }
+	
+	p {
+		font-family: Helvetica;
+		background-color: #fff;
+		color: #ff2700;
+		text-decoration: none;
+	}
+
+	p#bar {
+		font-size: 0.9em;
+		font-weight: bold !important;
+		}
+</style>
+<p id="bar">
+	<a href="/" alt="droptop"><img border="0" id="car" src="/images/car.png" alt="droptop" align="middle" height="35" width="45"></a>
+	You are viewing <a href="<%= @url %>" target="_blank"><%= @url %></a> || 
+	<img src="/images/camera.png" alt="screenshot" align="center"><a href="#" id="capture">Screenshot</a> ||
+	<img src="/images/note.png" alt="screenshot" align="center"><a href="#" id="note">Take Note</a> ||
+	<img src="/images/search_magnifier.png" alt="view drop" align="center"><a href="http://drop.io/<%= @drop.name %>">View Drop</a> || 
+	<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=1d36cb89-b8d9-4797-bcbc-dd9544a581dc&amp;type=website&amp;buttonText=Share&amp;popup=true&amp;post_services=facebook%2Ctwitter%2Cemail"></script> || 
+	<img src="/images/delete_item.png" alt="Close" align="center"><a href="<%= @url %>">Close</a>
+</p>
+<iframe id="underlying" width="100%" height="100%" src="<%= @url %>" border="0" noborder="noborder" frameborder="0" padding="0" spacing="0"></iframe>
+<script type="text/javascript" charset="utf-8" src="http://drop.io/thoughtstoblog/remote_chat_bar.js?chat_password=ann28qvgpx"></script>
+<script type="text/javascript" charset="utf-8" src="http://drop.io/<%= @drop.name %>/remote_chat_bar.js?chat_password=<%= @drop.chat_password %>"></script>
+<script type="text/javascript">
+	$("#capture").click(function () {
+		$.post("/screenshot/<%= @url %>");
+    });
+    $("#note").click(function () {
+	    alert("Taking a note");
+    });
+</script>

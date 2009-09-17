@@ -1,0 +1,62 @@
+<style>
+	body {
+		margin:100px 0px; padding:0px;
+		text-align:center;
+		}
+
+	#Content {
+		width:500px;
+		margin:0px auto;
+		text-align:left;
+		padding:15px;
+		border:1px dashed #333;
+		background-color:#eee;
+		}
+
+	p {
+		font-family: Helvetica;
+		background-color: #fff;
+		color: #ff2700;
+		text-decoration: none;
+	}
+
+	p#landing {
+		font-size: 5.0em;
+		font-weight: bold !important;
+		font-style: italic !important;
+		}
+	p#landing-sub {
+		font-size: 1.6em;
+		color: #333;
+		font-weight: bold !important;
+		font-style: italic !important;
+		}
+		
+	input {
+		font-family: Helvetica;
+		font-size: 1.0em;
+		padding: 5px;
+		border: 2px solid #333;
+		font-weight: bold !important;
+	}			
+	input.blur {
+		color: #999;
+		font-weight: bold !important;
+	}
+
+</style>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#url").hint();	
+});
+
+</script>
+<div id="content">
+	<img id="car" src="/images/car.png" alt="droptop">
+	<p id="landing">droptop</p>
+	<p id="landing-sub">Collaborate with the top down on the information super highway...</p>
+	<form action="/" method="post"><input type="text" id="url" name="url" title="http://google.com" size="50"></form>
+	<p id="landing-sub">or</p>
+	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + document.location })();">drop top</a> &lt;- drag to your bookmarks</p>
+</div>
