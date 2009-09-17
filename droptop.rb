@@ -14,7 +14,7 @@ configure do
   set :logger, logger
   use Rack::CommonLogger, logger
 
-  Dropio::Config.api_key = "511248eae3eaaab493007ae2da198521039a1c98"
+  Dropio::Config.api_key = "46f2d0f95744b94ec30ab86fb3dcae1882663179"
     
   set :public, 'public'
   set :views, 'views'
@@ -47,7 +47,7 @@ helpers do
   end
   
   def hash(url)
-    return "droptopTEST" + Digest::MD5.hexdigest(url)
+    return "droptop" + Digest::MD5.hexdigest(url)
   end
   
   def check_url(url)
