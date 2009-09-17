@@ -41,7 +41,6 @@ helpers do
       p = {:name => hashed_url, :description => "Collaborating, in real-time, about #{@url}"}
       drop = Dropio::Drop.create(p)
       drop.create_link(@url,@url)
-      drop.create_link()
     end
     return drop
   end
