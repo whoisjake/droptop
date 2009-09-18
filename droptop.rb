@@ -78,7 +78,7 @@ post '/note/*' do
     @drop = find_or_create_drop(@url, @hashed_url)
     
     begin
-      @drop.create_note("",params[:contents])
+      @drop.create_note(params[:contents])
     rescue Dropio::RequestError
     end
   end
