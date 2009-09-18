@@ -49,9 +49,13 @@ helpers do
     return "droptop" + Digest::MD5.hexdigest(url)
   end
   
-  def check_url(url)
-    real_url = URI.parse(@url) rescue nil
-    return real_url.class == URI::HTTP
+  def check_and_parse(url)
+    real_url = URI.parse(url) rescue nil
+    if real_url.class == URI::HTTP
+      url.gsub!(":/","://") if url =~ /:\/[a-zA-Z0-9]+/
+      return true, url
+    end
+    return false, nil
   end
 
 end
@@ -66,8 +70,9 @@ end
 
 get '/*' do
   @url = params[:splat][0]
+  valid, @url = check_and_parse(@url)
   options.logger.info "Found: #{@url}"
-  if check_url(@url)
+  if valid
     @hashed_url = hash(@url)
     @drop = find_or_create_drop(@url, @hashed_url)
   else
@@ -79,7 +84,8 @@ end
 
 post '/screenshot/*' do
   @url = params[:splat][0]
-  if check_url(@url)
+  valid, @url = check_and_parse(@url)
+  if valid
     @hashed_url = hash(@url)
     @drop = find_or_create_drop(@url, @hashed_url)
     fname = "dropTop#{rand(1000)}.jpeg"
