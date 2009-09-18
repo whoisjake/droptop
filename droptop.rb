@@ -76,7 +76,11 @@ post '/note/*' do
   if valid
     @hashed_url = hash(@url)
     @drop = find_or_create_drop(@url, @hashed_url)
-    @drop.create_note("",params[:contents])
+    
+    begin
+      @drop.create_note("",params[:contents])
+    rescue Dropio::RequestError
+    end
   end
   redirect_to '/note/posted'
 end

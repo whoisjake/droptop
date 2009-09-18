@@ -17,9 +17,24 @@
 
 	var countdown = 5;
 </script>
+<style>
+	body {
+		margin:50px 0px; padding:0px;
+		text-align:center;
+		}
+	p#done {
+		font-family: Helvetica;
+		background-color: #fff;
+		color: #ff2700;
+		text-decoration: none;
+		font-size: 4.0em;
+		font-weight: bold !important;
+		font-style: italic !important;
+		}
+</style>
 
 <div id="content">
-    <div style="margin-bottom:10px;">Done!</div>
+    <div style="margin-bottom:10px;"><p id="done">Done!</p></div>
     <p>
     <a href="#" onclick="javascript:self.close(); return false;">Close this window</a>
     </p>
