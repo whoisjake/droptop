@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	function countdown_func() {
+	    var prefix = 'or wait ';
+	    countdown--;
+	    el = document.getElementById('countdown');
+	    if (countdown == 1) {
+	        el.firstChild.nodeValue = 
+	            prefix + countdown + ' second.';
+	    } else if (countdown > 0) {
+	        el.firstChild.nodeValue = 
+	            prefix + countdown + ' seconds.';
+	    } else {
+	                 self.close();
+	    }
+	    if (countdown > 0) setTimeout('countdown_func()', 1000);
+	}
+
+	var countdown = 5;
+</script>
+
+<div id="content">
+    <div style="margin-bottom:10px;">Done!</div>
+    <p>
+    <a href="#" onclick="javascript:self.close(); return false;">Close this window</a>
+    </p>
+    <span id="countdown" style="color:#777;">
+        or wait 3 seconds.
+    </span>
+</div>
+
+<script type="text/javascript">
+    setTimeout('countdown_func()', 1000);
+</script>

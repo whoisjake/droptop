@@ -1,0 +1,15 @@
+<style>
+	p {
+		font-family: Helvetica;
+		background-color: #fff;
+		color: #ff2700;
+		text-decoration: none;
+		font-size: 1.2em;
+		font-weight: bold !important;
+	}
+</style>
+<p>Create a note about <%= @url %></p>
+<form action="/note/<%= @url %>" method="post">
+	<textarea name="contents" id="contents" rows="20" cols="40"></textarea>
+	<input type="submit" name="submit" value="Create Note">
+</form>

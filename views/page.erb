@@ -31,6 +31,6 @@
 		$.post("/screenshot/<%= @url %>");
     });
     $("#note").click(function () {
-	    alert("Taking a note");
+	    window.open("/note/<%= @url %>",'t','toolbar=0,resizable=0,status=1,width=400,height=450');
     });
 </script>

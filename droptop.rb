@@ -60,6 +60,27 @@ helpers do
 
 end
 
+get '/note/posted' do
+  erb :posted
+end
+
+get '/note/*' do
+  @url = params[:splat][0]
+  valid, @url = check_and_parse(@url)
+  erb :note
+end
+
+post '/note/*' do
+  @url = params[:splat][0]
+  valid, @url = check_and_parse(@url)
+  if valid
+    @hashed_url = hash(@url)
+    @drop = find_or_create_drop(@url, @hashed_url)
+    @drop.create_note("",params[:contents])
+  end
+  redirect_to '/note/posted'
+end
+
 get '/' do
   erb :home
 end
