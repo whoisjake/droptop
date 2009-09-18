@@ -10,6 +10,14 @@
 		color: #ff2700;
 		text-decoration: none;
 	}
+	
+	a:visited {
+		color: #999;
+	}
+	
+	a:link {
+		color: #333;
+	}
 
 	p#landing {
 		font-size: 4.0em;
@@ -22,7 +30,23 @@
 		font-weight: bold !important;
 		font-style: italic !important;
 		}
+	p#landing-what {
+		margin-bottom: 2px;
+		font-size: 1.0em;
+		color: #666;
+		font-weight: bold !important;
+		}
 		
+	p#landing-bookmarklet {
+		margin-top: 3px;
+		font-size: 2.0em;
+		color: #333;
+		font-weight: bold !important;
+		border:1px dashed #333;
+	    background-color:#eee;
+		width:200px;
+	    margin:0px auto;
+		}	
 	input {
 		font-family: Helvetica;
 		font-size: 1.0em;
@@ -31,7 +55,7 @@
 		font-weight: bold !important;
 	}			
 	input.blur {
-		color: #999;
+		color: #666;
 		font-weight: bold !important;
 	}
 
@@ -44,13 +68,13 @@ $(document).ready(function() {
 
 </script>
 <div id="content">
-	<img id="car" src="/images/car.png" alt="droptop">
-	<p id="landing">droptop</p>
+	<img src="/images/logo.png" alt="droptop">
 	<p id="landing-sub">Collaborate with the top down on the information super highway...</p>
+	<p id="landing-what">Chat, share notes, take screenshots, leave voice comments, and more on top of any website!</p>
 	<form action="/" method="post"><input type="text" id="url" name="url" title="Enter a URL" size="50"></form>
 	<p id="landing-sub"><a href="/http://www.rre.com">Cruise on down to RRE</a></p>
 	<p id="landing-sub"><a href="/http://www.facebook.com/lessin">Swing by Sam's Facebook profile</a></p>
 	<p id="landing-sub"><a href="/http://en.wikipedia.org/wiki/U.S._Route_66">Head down Route 66</a></p>
-	<p id="landing-sub">or</p>
-	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + window.location.href })();">drop top</a> &lt;- drag to your bookmarks</p>
+	<p id="landing-what">or drag and drop to your bookmarks for one click collaboration</p>
+	<p id="landing-bookmarklet"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + window.location.href })();">droptop</a></p>
 </div>
