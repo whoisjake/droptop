@@ -5,8 +5,21 @@
 	p {
 		font-family: Helvetica;
 		background-color: #fff;
-		color: #ff2700;
+		color: #333;
 		text-decoration: none;
+	}
+	
+	p#bar img.icon { 
+		display: inline; 
+		vertical-align: bottom; 
+	}
+	
+	a:visited {
+		color: #999;
+	}
+	
+	a:link {
+		color: #333;
 	}
 
 	p#bar {
@@ -24,14 +37,14 @@
 	}
 </style>
 <p id="bar">
-	<a href="/" alt="droptop"><img border="0" id="car" src="/images/small/car.png" alt="droptop" ></a>
-	viewing <a href="<%= @url %>" target="_blank"><%= @url %></a> || 
-	<img src="/images/small/camera.png" alt="screenshot" ><a href="#" id="capture">screenshot</a> ||
-	<img src="/images/small/note.png" alt="screenshot" ><a href="#" id="note">add note</a> ||
-	<img src="/images/small/telephone.png" alt="screenshot" ><%= @drop.voicemail %> ||
-	<img src="/images/small/search_magnifier.png" alt="view drop" ><a href="http://drop.io/<%= @drop.name %>">files (<%= @drop.asset_count %>)</a> || 
-	<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=1d36cb89-b8d9-4797-bcbc-dd9544a581dc&amp;type=website&amp;buttonText=share&amp;popup=true&amp;post_services=facebook%2Ctwitter%2Cemail"></script> || 
-	<a href="<%= @url %>"><img src="/images/small/delete_item.png" alt="Close" ></a>
+	<a href="/" alt="droptop"><img border="0" class="icon" src="/images/small/car.png" alt="droptop" ></a>
+	[&nbsp;viewing <a href="<%= @url %>" target="_blank"><%= @url %></a> ]&nbsp;[
+	<img class="icon" src="/images/small/camera.png" alt="screenshot" ><a href="#" id="capture">screenshot</a> ]&nbsp;[
+	<img class="icon" src="/images/small/note.png" alt="screenshot" ><a href="#" id="note">add note</a> ]&nbsp;[
+	<img class="icon" src="/images/small/telephone.png" alt="screenshot" ><%= @drop.voicemail %> ]&nbsp;[
+	<img class="icon" src="/images/small/search_magnifier.png" alt="view drop" ><a href="http://drop.io/<%= @drop.name %>">files (<%= @drop.asset_count %>)</a> ]&nbsp;[ 
+	<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=1d36cb89-b8d9-4797-bcbc-dd9544a581dc&amp;type=website&amp;buttonText=share&amp;popup=true&amp;post_services=facebook%2Ctwitter%2Cemail"></script> ]&nbsp;[
+	<a href="<%= @url %>"><img src="/images/small/delete_item.png" alt="Close" class="icon"></a> ]
 </p>
 <iframe id="underlying" width="100%" height="100%" src="<%= @url %>" border="0" noborder="noborder" frameborder="0" padding="0" spacing="0"></iframe>
 <script type="text/javascript" charset="utf-8" src="http://drop.io/<%= @drop.name %>/remote_chat_bar.js?chat_password=<%= @drop.chat_password %>"></script>
