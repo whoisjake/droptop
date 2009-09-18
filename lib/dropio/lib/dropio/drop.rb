@@ -63,7 +63,7 @@ class Dropio::Drop < Dropio::Resource
   end
   
   # Creates a note with a +title+ and +contents+
-  def create_note(title,contents)
+  def create_note(contents, title = nil)
     Dropio::Resource.client.create_note(self, contents, title)
   end
   
