@@ -48,7 +48,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$("#url").hint();	
+	$("#url").hint();
 });
 
 </script>
@@ -57,9 +57,9 @@ $(document).ready(function() {
 	<p id="landing">droptop</p>
 	<p id="landing-sub">Collaborate with the top down on the information super highway...</p>
 	<form action="/" method="post"><input type="text" id="url" name="url" title="Enter a URL" size="50"></form>
-	<p id="landing-sub"><a href="/http://google.com">Cruise on down to google.com</a></p>
-	<p id="landing-sub"><a href="/http://www.facebook.com/lessin">Swing by Sam's Facebook profile</a></p>
-	<p id="landing-sub"><a href="/http://en.wikipedia.org/wiki/U.S._Route_66">Head on down Route 66</a></p>
+	<p id="landing-sub"><a href="/http%3A%2F%2Fwww.rre.com%2F">Cruise on down to RRE</a></p>
+	<p id="landing-sub"><a href="/http%3A%2F%2Fwww.facebook.com%2Flessin">Swing by Sam's Facebook profile</a></p>
+	<p id="landing-sub"><a href="/http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FU.S._Route_66">Head down Route 66</a></p>
 	<p id="landing-sub">or</p>
-	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + escape(document.location) })();">drop top</a> &lt;- drag to your bookmarks</p>
+	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + encodeURIComponent(window.location.href) })();">drop top</a> &lt;- drag to your bookmarks</p>
 </div>

@@ -66,7 +66,7 @@ end
 
 get '/*' do
   @url = params[:splat][0]
-
+  options.logger.info "Found: #{@url}"
   if check_url(@url)
     @hashed_url = hash(@url)
     @drop = find_or_create_drop(@url, @hashed_url)
