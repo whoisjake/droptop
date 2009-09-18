@@ -56,7 +56,10 @@ $(document).ready(function() {
 	<img id="car" src="/images/car.png" alt="droptop">
 	<p id="landing">droptop</p>
 	<p id="landing-sub">Collaborate with the top down on the information super highway...</p>
-	<form action="/" method="post"><input type="text" id="url" name="url" title="http://google.com" size="50"></form>
+	<form action="/" method="post"><input type="text" id="url" name="url" title="Enter a URL" size="50"></form>
+	<p id="landing-sub"><a href="/http://google.com">Cruise on down to google.com</a></p>
+	<p id="landing-sub"><a href="/http://www.facebook.com/lessin">Swing by Sam's Facebook profile</a></p>
+	<p id="landing-sub"><a href="/http://en.wikipedia.org/wiki/U.S._Route_66">Head on down Route 66</a></p>
 	<p id="landing-sub">or</p>
-	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + document.location })();">drop top</a> &lt;- drag to your bookmarks</p>
+	<p id="landing-sub"><a href="javascript:(function(){ window.location = 'http://<%= request.env["HTTP_HOST"] %>/' + escape(document.location) })();">drop top</a> &lt;- drag to your bookmarks</p>
 </div>
