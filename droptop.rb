@@ -61,7 +61,7 @@ get '/' do
 end
 
 post '/' do
-  redirect_to '/' + params["url"]
+  redirect_to '/' + CGI::escape(params["url"])
 end
 
 get '/*' do
