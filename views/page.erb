@@ -57,4 +57,7 @@
     $("#note").click(function () {
 	    window.open("/note/<%= @url %>",'t','toolbar=0,resizable=0,status=1,width=400,height=450');
     });
+
+	window.setTimeout('$("#dropio-chatbar").contents()[0].defaultView.theChatLayer.toggleOpenClose()', 5000);
+    
 </script>
