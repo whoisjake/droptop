@@ -14,7 +14,7 @@ configure do
   set :logger, logger
   use Rack::CommonLogger, logger
 
-  Dropio::Config.api_key = "46f2d0f95744b94ec30ab86fb3dcae1882663179"
+  Dropio::Config.api_key = ""
     
   set :public, 'public'
   set :views, 'views'
